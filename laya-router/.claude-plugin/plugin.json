@@ -1,0 +1,19 @@
+{
+  "name": "laya-router",
+  "version": "0.1.0",
+  "description": "Uses a local laya-mlx typed-decision model to route each prompt to a model tier and to compact at natural breakpoints.",
+  "author": { "name": "Harshad Patil" },
+  "userConfig": {
+    "layaModel": { "type": "string", "title": "Laya checkpoint", "description": "Hugging Face id of the laya-mlx checkpoint", "default": "aac6fef/laya-mlx" },
+    "routing": { "type": "boolean", "title": "Route prompts", "description": "Let laya pick the model tier per turn", "default": true },
+    "haikuBelow": { "type": "number", "title": "Haiku below", "description": "Effort score (0-2) under which to use the haiku tier", "default": 0.9 },
+    "opusAbove": { "type": "number", "title": "Opus above", "description": "Effort score (0-2) over which to use the opus tier", "default": 1.25 },
+    "haikuModel": { "type": "string", "title": "Haiku tier model", "description": "Model id for trivial prompts", "default": "claude-haiku-4-5-20251001" },
+    "sonnetModel": { "type": "string", "title": "Sonnet tier model", "description": "Model id for typical prompts", "default": "claude-sonnet-5" },
+    "opusModel": { "type": "string", "title": "Opus tier model", "description": "Model id for hard prompts", "default": "claude-opus-5-5" },
+    "haikuMaxTokens": { "type": "number", "title": "Haiku context cap", "description": "Never route to haiku above this many context tokens", "default": 150000 },
+    "compaction": { "type": "boolean", "title": "Laya compaction", "description": "Compact early at breakpoints laya detects", "default": true },
+    "compactMinPercent": { "type": "number", "title": "Compaction floor %", "description": "Only consider compacting above this context fill", "default": 50 },
+    "compactMinProb": { "type": "number", "title": "Breakpoint confidence", "description": "Minimum laya P(breakpoint) to compact", "default": 0.6 }
+  }
+}
