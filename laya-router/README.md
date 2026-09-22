@@ -20,14 +20,32 @@ the session's model and doesn't compact.
 
 Apple Silicon, macOS 14+, `uv` on PATH. The first run downloads `aac6fef/laya-mlx` (~0.9 GB).
 
-## Use
+## Install
+
+From GitHub (run inside Claude Code):
+
+```
+/plugin marketplace add harshadptl/laya-claude-code
+/plugin install laya-router@laya-claude-code
+```
+
+Function hooks must be enabled, so start Claude Code with:
+
+```bash
+CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 claude
+```
+
+Update later with `/plugin marketplace update laya-claude-code`.
+
+From a local checkout, for one session only:
 
 ```bash
 CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 claude --plugin-dir ./laya-router
 ```
 
 The options are listed in `.claude-plugin/plugin.json` (`userConfig`) and can be changed in `/config`
-or under `pluginConfigs["laya-router@inline"].options` in settings.
+or under `pluginConfigs["laya-router@laya-claude-code"].options` in settings
+(`laya-router@inline` when loaded with `--plugin-dir`).
 
 ## Checks
 
