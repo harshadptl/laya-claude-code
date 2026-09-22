@@ -1,0 +1,11 @@
+{
+  "name": "laya-claude-code",
+  "owner": { "name": "Harshad Patil" },
+  "plugins": [
+    {
+      "name": "laya-router",
+      "source": "./laya-router",
+      "description": "Uses a local laya-mlx typed-decision model to route each prompt to a model tier and to compact at natural breakpoints."
+    }
+  ]
+}
