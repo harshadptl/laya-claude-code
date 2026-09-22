@@ -35,6 +35,12 @@ Function hooks must be enabled, so start Claude Code with:
 CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 claude
 ```
 
+Or set it once in your shell profile, then restart the terminal:
+
+```bash
+echo 'export CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1' >> ~/.zshrc
+```
+
 Update later with `/plugin marketplace update laya-claude-code`.
 
 From a local checkout, for one session only:
